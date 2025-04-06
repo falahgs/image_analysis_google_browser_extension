@@ -1,0 +1,160 @@
+.gemini-tooltip {
+    position: absolute;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    z-index: 10000;
+    width: 280px;
+    display: none;
+    font-family: Arial, sans-serif;
+    transition: opacity 0.2s ease;
+}
+
+.gemini-tooltip.right-arrow::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    right: -6px;
+    width: 12px;
+    height: 12px;
+    background: white;
+    border-right: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    transform: rotate(45deg);
+}
+
+.loading {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 40px;
+}
+
+.loading-spinner {
+    width: 20px;
+    height: 20px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #4285f4;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loading-text {
+    color: #666;
+    font-size: 14px;
+}
+
+.result-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.result {
+    color: #333;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 4px;
+    word-wrap: break-word;
+    max-height: 200px;
+    overflow-y: auto;
+    padding-right: 4px;
+}
+
+.result::-webkit-scrollbar {
+    width: 6px;
+}
+
+.result::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+}
+
+.result::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 3px;
+}
+
+.result::-webkit-scrollbar-thumb:hover {
+    background: #666;
+}
+
+/* Style for copyright text */
+.result::after {
+    content: '';
+    display: block;
+    margin-top: 8px;
+    border-top: 1px solid #eee;
+}
+
+/* Arabic text support */
+@font-face {
+    font-family: 'Noto Sans Arabic';
+    src: url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic&display=swap');
+}
+
+.result {
+    font-family: 'Arial', 'Noto Sans Arabic', sans-serif;
+}
+
+.bottom-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid #eee;
+}
+
+.copy-button {
+    background-color: #4285f4;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 12px;
+    font-size: 13px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    transition: all 0.2s ease;
+    flex: 1;
+}
+
+.copy-button:hover {
+    background-color: #3367d6;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.copy-button.copied {
+    background-color: #34a853;
+}
+
+.copy-icon {
+    width: 14px;
+    height: 14px;
+    fill: currentColor;
+}
+
+.copyright {
+    font-size: 11px;
+    color: #666;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.copyright .arabic {
+    font-family: 'Noto Sans Arabic', sans-serif;
+    direction: rtl;
+} 
